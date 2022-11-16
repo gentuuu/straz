@@ -1,0 +1,569 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+  <link rel="stylesheet" href="css/swiper.css">
+  <link  rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <style>
+    body{
+    margin: 0;
+     padding: 0;
+     font-family: 'Roboto', sans-serif;
+}
+ .navigation {
+     height: 55px;
+     background: linear-gradient(45deg, #4199fe, #74b4fe);
+}
+ .brand {
+     position: absolute;
+     padding-left: 20px;
+     float: left;
+     line-height: 55px;
+     text-transform: uppercase;
+     font-size: 1.4em;
+}
+ .brand a, .brand a:visited {
+     color: #ffffff;
+     text-decoration: none;
+}
+ .nav-container {
+     max-width: 1000px;
+     margin: 0 auto;
+}
+ nav {
+     float: right;
+}
+ nav ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+}
+ nav ul li {
+     float: left;
+     position: relative;
+}
+ nav ul li a,nav ul li a:visited {
+     display: block;
+     padding: 0 20px;
+     line-height: 55px;
+     color: #fff;
+     background: #262626 ;
+     text-decoration: none;
+}
+ nav ul li a{
+     background: transparent;
+     color: #FFF;
+}
+ nav ul li a:hover, nav ul li a:visited:hover {
+     background: #2581DC;
+     color: #ffffff;
+}
+ .navbar-dropdown li a{
+     background: #2581DC;
+}
+ nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after {
+     padding-left: 4px;
+     content: ' \025BE';
+}
+ nav ul li ul li {
+     min-width: 190px;
+}
+ nav ul li ul li a {
+     padding: 15px;
+     line-height: 20px;
+}
+ .navbar-dropdown {
+     position: absolute;
+     display: none;
+     z-index: 1;
+     background: #fff;
+     box-shadow: 0 0 35px 0 rgba(0,0,0,0.25);
+}
+/* Mobile navigation */
+ .nav-mobile {
+     display: none;
+     position: absolute;
+     top: 0;
+     right: 0;
+     background: transparent;
+     height: 55px;
+     width: 70px;
+}
+ @media only screen and (max-width: 800px) {
+     .nav-mobile {
+         display: block;
+    }
+     nav {
+         width: 100%;
+         padding: 55px 0 15px;
+    }
+     nav ul {
+         display: none;
+    }
+     nav ul li {
+         float: none;
+    }
+     nav ul li a {
+         padding: 15px;
+         line-height: 20px;
+         background: #262626;
+    }
+     nav ul li ul li a {
+         padding-left: 30px;
+    }
+     .navbar-dropdown {
+         position: static;
+     }
+}
+ @media screen and (min-width:800px) {
+     .nav-list {
+         display: block !important;
+    }
+}
+ #navbar-toggle {
+     position: absolute;
+     left: 18px;
+     top: 15px;
+     cursor: pointer;
+     padding: 10px 35px 16px 0px;
+}
+ #navbar-toggle span, #navbar-toggle span:before, #navbar-toggle span:after {
+     cursor: pointer;
+     border-radius: 1px;
+     height: 3px;
+     width: 30px;
+     background: #ffffff;
+     position: absolute;
+     display: block;
+     content: '';
+     transition: all 300ms ease-in-out;
+}
+ #navbar-toggle span:before {
+     top: -10px;
+}
+ #navbar-toggle span:after {
+     bottom: -10px;
+}
+ #navbar-toggle.active span {
+     background-color: transparent;
+}
+ #navbar-toggle.active span:before, #navbar-toggle.active span:after {
+     top: 0;
+}
+ #navbar-toggle.active span:before {
+     transform: rotate(45deg);
+}
+ #navbar-toggle.active span:after {
+     transform: rotate(-45deg);
+}
+  </style>
+
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">Logo</a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="#!">Home</a>
+          </li>
+          <li>
+            <a href="#!">About</a>
+          </li>
+          <li>
+            <a href="#!">Services</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="#!">Sass</a>
+              </li>
+              <li>
+                <a href="#!">Less</a>
+              </li>
+              <li>
+                <a href="#!">Stylus</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Portfolio</a>
+          </li>
+          <li>
+            <a href="#!">Category</a>
+            <ul class="navbar-dropdown">
+              <li>
+                <a href="#!">Sass</a>
+              </li>
+              <li>
+                <a href="#!">Less</a>
+              </li>
+              <li>
+                <a href="#!">Stylus</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- <div class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="index.html">Logo</a></div>
+      <nav id='cssmenu'>
+      
+        <div id="head-mobile"></div>
+        <div class="button"></div>
+        <ul>
+          <li class='active'><a href='#'>HOME</a></li>
+          <li><a href='#'>ABOUT</a></li>
+          <li><a href='#'>PRODUCTS</a>
+            <ul>
+              <li><a href='#'>Product 1</a>
+                <ul>
+                  <li><a href='#'>Sub Product</a></li>
+                  <li><a href='#'>Sub Product</a></li>
+                </ul>
+              </li>
+              <li><a href='#'>Product 2</a>
+                <ul>
+                  <li><a href='#'>Sub Product</a></li>
+                  <li><a href='#'>Sub Product</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href='#'>BIO</a></li>
+          <li><a href='#'>VIDEO</a></li>
+          <li><a href='#'>GALLERY</a></li>
+          <li><a href='#'>CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> -->
+
+
+
+  <!-- <div class="navigation">
+    <div class="container">
+      <div class="navigation-wrapper">
+        <div class="navigation-content">
+          <div class="navigation-logo">
+            <img src="img/slider.jpg" alt="">
+          </div>
+          <div class="navigation-menu">
+            <nav class="navigation__nav">
+              <ul class="navigation__list">
+                <li class="navigation__item"><a href="" class="navigation__link">Strona Główna</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">O nas</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Przepisy</a></li>
+                <li class="navigation__item"><a href="podstrona.html" class="navigation__link">Blog</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Kontakt</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <header>
+    <div class="header-main">
+      <div class="swiper header-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="header-slide">
+              <img src="img/slider.jpg" alt="">
+              <div class="header-slide-text">
+                <div class="header-slide__title">Lorem ipsum 1</div>
+                <div class="header-slide__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit cupiditate quos culpa saepe, consequuntur doloribus eveniet nemo sed, voluptas facere explicabo eaque fugit necessitatibus libero tempora expedita minus magni possimus?</div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-header-prev" style=""><i class="fa fa-angle-left"></i></div>
+        <div class="swiper-header-next" style=""><i class="fa fa-angle-right"></i></div>
+      
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-articles">
+      <div class="container">
+        <div class="main-articles-content">
+          <div class="main-articles__title">Aktualności</div>
+          <hr class="gray">
+          <div class="main-articles__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolorem impedit ex? Consequatur repudiandae quis ducimus officiis perferendis reiciendis eos quae similique illo? Voluptas odio facilis, dolorum non repellendus perspiciatis!</div>
+          <div class="main-articles-items">
+            <a href="" class="main-articles-item">
+              <img src="img/slider.jpg" alt="">
+              <div class="main-articles-overlay">
+                <div class="main-articles-item__title">Lorem Ipsum</div>
+                <div class="main-articles-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="main-articles-item__read">Zobacz</div>
+              </div>
+            </a>
+            <a href="" class="main-articles-item">
+              <img src="img/slider.jpg" alt="">
+              <div class="main-articles-overlay">
+                <div class="main-articles-item__title">Lorem Ipsum</div>
+                <div class="main-articles-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="main-articles-item__read">Zobacz</div>
+              </div>
+            </a>
+            <a href="" class="main-articles-item">
+              <img src="img/slider.jpg" alt="">
+              <div class="main-articles-overlay">
+                <div class="main-articles-item__title">Lorem Ipsum</div>
+                <div class="main-articles-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="main-articles-item__read">Zobacz</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-aboutus">
+      <div class="container">
+        <div class="main-aboutus-content">
+          <div class="main-aboutus__title"> O nas</div>
+          <div class="main-aboutus__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam hic architecto est nisi tenetur quos ipsa? Architecto fugit eveniet exercitationem, eaque esse velit dignissimos deleniti excepturi, quibusdam vel amet?
+            Omnis, nihil officia necessitatibus optio ea sapiente? Dicta ipsum possimus debitis enim ea ab corporis magni id velit, eos porro reiciendis voluptate exercitationem fuga voluptatem magnam at ipsam quidem nisi.
+            Accusamus voluptatum nobis, vitae consequatur laborum omnis tempora cumque nemo molestias! Quas voluptatum ad eaque nemo, qui perspiciatis impedit laborum vel officia asperiores voluptatem dolorum, consequatur, eveniet pariatur distinctio quo?
+            Dolorem laborum maxime qui, vel optio dolorum perferendis odit! Dolorum fuga, cumque ut neque maxime quod voluptatem odit! Quas hic veniam culpa illum recusandae voluptatem vero, beatae unde ea nulla.
+            Tempore accusantium unde, in dolorum enim facilis numquam nulla amet animi cumque fuga perspiciatis? Perferendis maxime rem quia quo unde iusto porro, aspernatur, amet dignissimos neque, alias blanditiis velit commodi.
+          </div>
+          <div class="main-aboutus__read"><a href="">czytaj więcej</a></div>
+          <div class="main-aboutus__img">
+            <img src="img/slider.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-about">
+      <div class="container">
+        <div class="main-about-content">
+          <div class="main-about__title">Poznaj OSP</div>
+          <div class="main-about__motto">
+            MOTTO STRAŻY OCHOTNICZEJ
+          </div>
+          <div class="main-about-row">
+            <div class="main-about__text">
+              <h2>OSP Pakoszówka</h2>
+              <p>Krótki opis</p>
+              <a href="" class="main-about__read">Czytaj dalej</a>
+            </div>
+            <div class="main-about__img">
+              <img src="img/slider.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-sponsors">
+      <div class="container">
+        <div class="main-sponsors-content">
+          <div class="main-sponsors-header">
+            <div class="main-sponsors-header__title">Sponsorzy</div>
+            <hr class="gray">
+            <div class="main-sponsors-header__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At, accusantium quidem autem ducimus ipsum aliquam qui, unde deserunt consectetur neque quae modi. Repudiandae aliquam necessitatibus officia quia? Soluta, corrupti ducimus!
+            </div>
+          </div>
+          <div class="main-sponsors-swiper">
+            <div class="swiper sponsors-swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="main-sponsors-slide">
+                    <div class="main-sponsors-slide__img">
+                      <img src="img/slider.jpg" alt="">
+                    </div>
+                    <div class="main-sponsors-slide__title">Lorem</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="main-sponsors-slide">
+                    <div class="main-sponsors-slide__img">
+                      <img src="img/slider.jpg" alt="">
+                    </div>
+                    <div class="main-sponsors-slide__title">Lorem</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="main-sponsors-slide">
+                    <div class="main-sponsors-slide__img">
+                      <img src="img/slider.jpg" alt="">
+                    </div>
+                    <div class="main-sponsors-slide__title">Lorem</div>
+                  </div>
+                </div>
+                
+              </div>
+        
+              <!-- If we need navigation buttons -->
+              <div class="swiper-sponsors-prev" style=""><i class="fa fa-angle-left"></i></div>
+              <div class="swiper-sponsors-next" style=""><i class="fa fa-angle-right"></i></div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="container">
+        <div class="post-content">
+          <div class="post__title"> O nas</div>
+          <div class="post__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam hic architecto est nisi tenetur quos ipsa? Architecto fugit eveniet exercitationem, eaque esse velit dignissimos deleniti excepturi, quibusdam vel amet?
+            Omnis, nihil officia necessitatibus optio ea sapiente? Dicta ipsum possimus debitis enim ea ab corporis magni id velit, eos porro reiciendis voluptate exercitationem fuga voluptatem magnam at ipsam quidem nisi.
+            Accusamus voluptatum nobis, vitae consequatur laborum omnis tempora cumque nemo molestias! Quas voluptatum ad eaque nemo, qui perspiciatis impedit laborum vel officia asperiores voluptatem dolorum, consequatur, eveniet pariatur distinctio quo?
+            Dolorem laborum maxime qui, vel optio dolorum perferendis odit! Dolorum fuga, cumque ut neque maxime quod voluptatem odit! Quas hic veniam culpa illum recusandae voluptatem vero, beatae unde ea nulla.
+            Tempore accusantium unde, in dolorum enim facilis numquam nulla amet animi cumque fuga perspiciatis? Perferendis maxime rem quia quo unde iusto porro, aspernatur, amet dignissimos neque, alias blanditiis velit commodi.
+          </div>
+          <div class="post-items">
+            <a href="" class="post-item">
+              <div class="post-item__text">
+                <div class="post-item__title">Lorem ipsum</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="post-item__read"><span>Czytaj więcej</span></div>
+              </div>
+              <div class="post-item__img">
+                <img src="img/slider.jpg" alt="">
+              </div>
+            </a>
+            <a href="" class="post-item">
+              <div class="post-item__text">
+                <div class="post-item__title">Lorem ipsum</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="post-item__read"><span>Czytaj więcej</span></div>
+              </div>
+              <div class="post-item__img">
+                <img src="img/slider.jpg" alt="">
+              </div>
+            </a>
+            <a href="" class="post-item">
+              <div class="post-item__text">
+                <div class="post-item__title">Lorem ipsum</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="post-item__read"><span>Czytaj więcej</span></div>
+              </div>
+              <div class="post-item__img">
+                <img src="img/slider.jpg" alt="">
+              </div>
+            </a>
+            <a href="" class="post-item">
+              <div class="post-item__text">
+                <div class="post-item__title">Lorem ipsum</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="post-item__read"><span>Czytaj więcej</span></div>
+              </div>
+              <div class="post-item__img">
+                <img src="img/slider.jpg" alt="">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+
+
+  <div class="footer-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20677.094353044766!2d22.08502287822318!3d49.62345167965385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473c6be187069cd9%3A0xfecfc931da5eef2!2s38-507%20Pakosz%C3%B3wka!5e0!3m2!1spl!2spl!4v1642448261488!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <footer>
+    <div class="footer">
+      <div class="footer-content">  
+        <div class="footer-center">
+          <div class="container">
+            <div class="footer-menu">
+              <div class="footer-menu-row">
+                <div class="footer-menu-row__title">Lorem ipsum</div>
+                <hr class="gray">
+                <div class="footer-menu-row__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quia vel doloribus architecto accusantium soluta tempore natus dignissimos nemo culpa ab blanditiis ducimus iusto maiores, dolore fugit libero iste id.
+                  Accusamus doloremque aliquid quisquam laudantium explicabo debitis vel possimus sit, dignissimos eaque cumque asperiores quam, fugit quos, ea minima temporibus sint excepturi illum aperiam vitae reprehenderit mollitia quibusdam veritatis! Suscipit!
+                </div>
+              </div>
+              <div class="footer-menu-row">
+                <div class="footer-menu-row__title">Lorem ipsum</div>
+                <hr class="gray">
+                <div class="footer-menu-row__nav">
+                  <ul>
+                    <li>Blog</li>
+                    <li>Blog</li>
+                    <li>Blog</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-menu-row">
+                <div class="footer-menu-row__title">Kontakt</div>
+                <hr class="gray">
+                <div class="footer-menu-row__contact">
+                  <span>Lorem</span>
+                  <span>Lorem</span>
+                  <span>Lorem</span>
+                  <span>Lorem</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

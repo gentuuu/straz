@@ -1,0 +1,42 @@
+.breadcrumps {
+  margin-top: 10px;
+  display: flex;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  
+  & span{
+    padding: 0 15px;
+    color: #acacac;
+  }
+
+  .breadcrumps-item {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    color: #acacac;
+    font-family: "RobotoCondensed";
+    font-size: 12px;
+    letter-spacing: 0.3px;
+
+
+
+    li {
+      margin-right: 7px;
+
+      &:not(:first-child) {
+        margin-left: 7px;
+      }
+      a {
+        color: #b1b1b1;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    & span{
+      padding: 0 15px;
+    }
+  }
+}
+

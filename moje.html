@@ -1,0 +1,323 @@
+<!-- POPUP -->
+
+
+<html>
+    <head>
+    
+    </head>
+    <body>
+
+        <style>
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-smooth: auto;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #444;
+  background-color: slategray;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.pdfobject-container {
+  height: 30rem;
+  border: 1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.trigger {
+  margin: 0 0.75rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+.trigger i {
+  margin-right: 0.3125rem;
+}
+.trigger:hover {
+  box-shadow: 0 0.875rem 1.75rem rgba(0, 0, 0, 0.25), 0 0.625rem 0.625rem rgba(0, 0, 0, 0.22);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0vh;
+  background-color: transparent;
+  overflow: hidden;
+  transition: background-color 0.25s ease;
+  z-index: 9999;
+}
+.modal.open {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.25s;
+}
+.modal.open > .content-wrapper {
+  transform: scale(1);
+}
+.modal .content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  margin: 0;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  transition: transform 0.25s;
+  transition-delay: 0.15s;
+}
+.modal .content-wrapper .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  transition: 0.25s linear;
+}
+.modal .content-wrapper .close:before, .modal .content-wrapper .close:after {
+  position: absolute;
+  content: '';
+  width: 1.25rem;
+  height: 0.125rem;
+  background-color: black;
+}
+.modal .content-wrapper .close:before {
+  transform: rotate(-45deg);
+}
+.modal .content-wrapper .close:after {
+  transform: rotate(45deg);
+}
+.modal .content-wrapper .close:hover {
+  transform: rotate(360deg);
+}
+.modal .content-wrapper .close:hover:before, .modal .content-wrapper .close:hover:after {
+  background-color: tomato;
+}
+.modal .content-wrapper .modal-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 1.25rem;
+}
+.modal .content-wrapper .modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modal .content-wrapper .content {
+  position: relative;
+  display: flex;
+}
+.modal .content-wrapper .content p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+.modal .content-wrapper .modal-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 1.875rem 0 0;
+}
+.modal .content-wrapper .modal-footer .action {
+  position: relative;
+  margin-left: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  background-color: slategray;
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 0.87rem;
+  font-weight: 300;
+  overflow: hidden;
+  z-index: 1;
+}
+.modal .content-wrapper .modal-footer .action:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: width 0.25s;
+  z-index: 0;
+}
+.modal .content-wrapper .modal-footer .action:first-child {
+  background-color: #2ecc71;
+}
+.modal .content-wrapper .modal-footer .action:last-child {
+  background-color: #e74c3c;
+}
+.modal .content-wrapper .modal-footer .action:hover:before {
+  width: 100%;
+}
+
+
+</style>
+
+
+
+
+
+
+<button class="trigger" data-modal-galeria="galeria-1"><i class="fa fa-fire" aria-hidden="true"></i>	Modal 1</button>
+<button class="trigger" data-modal-galeria="galeria-2"><i class="fa fa-fire" aria-hidden="true"></i>	Modal 2</button>
+<button class="trigger" data-modal-galeria="galeria-3"><i class="fa fa-fire" aria-hidden="true"></i>	Modal 3</button>
+<div class="modal" data-modal="trigger-1">
+  <article class="content-wrapper">
+    <button class="close"></button>
+    <header class="modal-header">
+      <h2>This is a modal 1</h2>
+    </header>
+    <div class="content">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
+    </div>
+    <footer class="modal-footer">
+      <button class="action">Accept</button>
+      <button class="action">Decline</button>
+    </footer>
+  </article>
+</div>
+<div class="modal" data-modal="galeria-2">
+    <article class="content-wrapper">
+        <button class="close"></button>
+        <div id="gallery1" style="width:640px;height:640px;">
+          This content requires HTML5 &amp; Javascript or Adobe Flash Player Version 9 or higher.
+          </div>
+      </article>
+</div>
+
+
+<div class="modal" data-modal="trigger-3">
+    <article class="content-wrapper">
+      <button class="close"></button>
+      <div id="gallery1" style="width:640px;height:640px;">
+        This content requires HTML5 &amp; Javascript or Adobe Flash Player Version 9 or higher.
+        </div>
+    </article>
+  </div>
+
+
+    </body>
+
+
+    <script>
+        const buttons = document.querySelectorAll(`button[data-modal-galeria]`);
+        
+        for(let button of buttons) {
+            modalEvent(button);
+        }
+        
+        function modalEvent(button) {
+            button.addEventListener('click', () => {
+                const galeria = button.getAttribute('data-modal-galeria');
+                const modal = document.querySelector(`[data-modal=${galeria}]`);
+                const contentWrapper = modal.querySelector('.content-wrapper');
+                const close = modal.querySelector('.close');
+        
+                close.addEventListener('click', () => modal.classList.remove('open'));
+                modal.addEventListener('click', () => modal.classList.remove('open'));
+                contentWrapper.addEventListener('click', (e) => e.stopPropagation());
+        
+                modal.classList.toggle('open');
+            });
+        }
+        </script>
+
+<script src="js/vendor/popup.js"></script>
+</html>
+
+
+<!-- END POPUP -->
+
+
+
+<!-- SWIPER -->
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a href="img/img_0_0_0.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/img_0_0_0.jpg" alt=""></a>
+     </div>
+    </div>
+    <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+</div>
+
+
+<link rel="stylesheet" href="css/swiper.css">
+<script src="/js/swiper.js"></script>
+
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: { slidesPerView: 1 }
+        },
+  
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');</script>
+
+  <!-- END SWIPER -->
+
+<!-- GALERIA LIGHTBOX -->
+
+<a href="img/img_0_0_0.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/img_0_0_0.jpg" alt=""></a>
+<script src="js/vendor/lightbox.min.js"></script> <!--zawsze na konic -->
+
+
+
+
+

@@ -1,0 +1,154 @@
+// @keyframes fade-in-left {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-100%);
+//   }
+//   70% {
+//     opacity: .4;
+//     transform: translateX(30px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes fade-in-down {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(1000px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+// @keyframes fade-in-right {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(100%);
+//   }
+//   50% {
+//     opacity: .4;
+//     transform: translateX(-30px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+// @keyframes slide-in-down {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(100px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes shake {
+//   10%, 90% {
+//     transform: rotate(10deg);
+//   }
+//   20%, 80% {
+//     transform: rotate(-10deg);
+//   }
+//   30%, 50%, 70% {
+//     transform: rotate(5deg);
+//   }
+//   40%, 60% {
+//     transform: rotate(-5deg);
+//   }
+// }
+
+// @keyframes jump {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-3px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+
+// @keyframes to-top-left {
+//   0% {
+
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(-20px, -20px);
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }
+// @keyframes to-left {
+//   0% {
+
+//     transform: translateX(0);
+//   }
+//   50% {
+//     transform: translate(-20%);
+//   }
+//   100% {
+//     transform: translate(0);
+//   }
+// }
+
+// @keyframes chaos-1 {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(20px, -4px);
+//   }
+//   0% {
+//     transform: translate(0, 0);
+//   }
+// }
+// @keyframes chaos-2 {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(20px, -20px);
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }
+// @keyframes chaos-3 {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(-2px, 2px);
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }
+// @keyframes chaos-4 {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(2px, 2px);
+//   }
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }
+
